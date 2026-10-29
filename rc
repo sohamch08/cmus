@@ -9,3 +9,11 @@ add -l ~/Music
 
 # binds
 bind -f common q quit
+
+# Sort library and playlists by title
+set lib_sort=title
+set pl_sort=title
+
+# Playback
+set repeat=true
+set show_remaining_time=true
