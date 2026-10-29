@@ -17,3 +17,7 @@ set pl_sort=title
 # Playback
 set repeat=true
 set show_remaining_time=true
+
+# Now-playing display
+set format_current= %t - %a - %l%= %y
+set format_title=%l - %a - %t (%y)
