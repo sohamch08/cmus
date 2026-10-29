@@ -1,1 +1,11 @@
-colorscheme sportify
+colorscheme spotify
+
+# Audio output
+set output_plugin=pulse
+set mixer.pulse.restore_volume=1
+
+# Music Directory
+add -l ~/Music
+
+# binds
+bind -f common q quit
