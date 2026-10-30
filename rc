@@ -1,3 +1,7 @@
+# Clear saved album-heading colors before applying the theme.
+# Spotify leaves these unset; other themes may override them below.
+set color_trackwin_album_bg=default
+set color_trackwin_album_fg=default
 colorscheme spotify
 
 # Audio output
@@ -35,3 +39,5 @@ set show_current_bitrate=false
 source ~/.config/cmus/bindings.conf
 source ~/.config/cmus/appearance.conf
 
+# Start notifications once alongside cmus
+shell pgrep -u "$(id -u)" -x cmus-notify >/dev/null || "$HOME/.cargo/bin/cmus-notify" --link --cover --timeout 3
