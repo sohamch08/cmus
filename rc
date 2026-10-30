@@ -37,7 +37,6 @@ set show_current_bitrate=false
 
 # cmus loads saved/default bindings first; apply our overrides last.
 source ~/.config/cmus/bindings.conf
-# Alternate title row with Powerline separators.
 source ~/.config/cmus/appearance-powerline.conf
 
 # Notifications run as one daemon; clear the obsolete status hook.
