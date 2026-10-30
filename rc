@@ -2,7 +2,7 @@
 # Spotify leaves these unset; other themes may override them below.
 set color_trackwin_album_bg=default
 set color_trackwin_album_fg=default
-colorscheme spotify
+colorscheme themes/spotify
 
 # Audio output
 set output_plugin=pulse
@@ -24,7 +24,6 @@ set aaa_mode=all
 # Open in the sorted library view (2)
 set start_view=sorted
 
-
 # Pause when the audio output device changes
 set pause_on_output_change=true
 
@@ -36,8 +35,11 @@ set replaygain_preamp=0
 # Keep the playback footer free of bitrate details
 set show_current_bitrate=false
 
+# cmus loads saved/default bindings first; apply our overrides last.
 source ~/.config/cmus/bindings.conf
-source ~/.config/cmus/appearance.conf
+# Alternate title row with Powerline separators.
+source ~/.config/cmus/appearance-powerline.conf
 
-# Start notifications once alongside cmus
-shell pgrep -u "$(id -u)" -x cmus-notify >/dev/null || "$HOME/.cargo/bin/cmus-notify" --link --cover --timeout 3
+# Notifications run as one daemon; clear the obsolete status hook.
+set status_display_program=
+shell pgrep -u "$(id -u)" -x cmus-notify >/dev/null || exec "$HOME/.cargo/bin/cmus-notify" --link --cover --timeout 3 --cmus-remote-bin "$HOME/.config/cmus/notify-remote.sh"
