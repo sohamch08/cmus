@@ -17,6 +17,9 @@ set repeat=true
 set show_remaining_time=true
 set aaa_mode=all
 
+# Open in the sorted library view (2)
+set start_view=sorted
+
 # Now-playing display
 set format_current= %t - %a - %l%= %y
 set format_title=%l - %a - %t (%y)
