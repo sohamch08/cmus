@@ -29,8 +29,8 @@ set replaygain=smart
 set replaygain_limit=true
 set replaygain_preamp=0
 
-# Show the playing track's bitrate in the status line
-set show_current_bitrate=true
+# Keep the playback footer free of bitrate details
+set show_current_bitrate=false
 
 source ~/.config/cmus/bindings.conf
 source ~/.config/cmus/appearance.conf
