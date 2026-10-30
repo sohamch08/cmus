@@ -19,8 +19,10 @@ uppercase letters mean **Shift + letter**: for example, `W` means **Shift+w**.
 | `Ctrl+P` | Previous track                                                      |
 | `X`      | Stop playback                                                       |
 | `q`      | Detach from the tmux session named `cmus`, keeping playback running |
+| `Q`      | Kill the tmux session named `cmus`, stopping playback               |
 
-Use `:quit` to exit cmus completely.
+`Q` (Shift+q) runs `tmux kill-session -t cmus`, closing the entire named session.
+Use `:quit` to exit cmus normally without explicitly killing the tmux session.
 
 ### Volume
 
@@ -68,11 +70,12 @@ and uses `flock` to serialize rapid presses. Keep the script executable.
 
 ### Queue, selection, and metadata
 
-| Key | Action                                                                                         |
-| --- | ---------------------------------------------------------------------------------------------- |
-| `e` | Add the selected tracks to the playback queue                                                  |
-| `W` | Expand/collapse an artist's album list in library view; mark/unmark tracks in track-list views |
-| `U` | Refresh cached music metadata                                                                  |
+| Key      | Action                                                                                         |
+| -------- | ---------------------------------------------------------------------------------------------- |
+| `e`      | Add the selected tracks to the playback queue                                                  |
+| `W`      | Expand/collapse an artist's album list in library view; mark/unmark tracks in track-list views |
+| `U`      | Refresh cached music metadata                                                                  |
+| `Ctrl+R` | Reload Config                                                                                  |
 
 To browse an artist's albums in library view, select the artist, press `W` to
 expand, select an album, then press `w` to move into its song pane. Press `w`
@@ -94,7 +97,7 @@ binary at `~/.cargo/bin/cmus-notify`. Its startup options are:
 
 | Option              | Purpose                                                            |
 | ------------------- | ------------------------------------------------------------------ |
-| `--config`          | Load [cmus-notify/config.toml](./cmus-notify/config.toml)           |
+| `--config`          | Load [cmus-notify/config.toml](./cmus-notify/config.toml)          |
 | `--link`            | Exit the notification daemon when cmus exits                       |
 | `--cover`           | Include album artwork when available                               |
 | `--timeout 3`       | Set the track-notification timeout to three seconds                |
