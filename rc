@@ -7,18 +7,15 @@ set mixer.pulse.restore_volume=1
 # Music Directory
 add -l ~/Music
 
-# binds
-bind -f common space player-pause
-bind -f common q quit
-bind -f common V win-toggle
-
 # Sort library and playlists by title
+set play_sorted=false
 set lib_sort=title
 set pl_sort=title
 
 # Playback
 set repeat=true
 set show_remaining_time=true
+set aaa_mode=all
 
 # Now-playing display
 set format_current= %t - %a - %l%= %y
@@ -28,3 +25,7 @@ set format_title=%l - %a - %t (%y)
 set format_playlist= %-21%a %3n. %t%= %d %6{bitrate} kbps
 set format_playlist_va= %-21%A %3n. %t (%a)%= %d %6{bitrate} kbps
 set altformat_playlist= %f%= %d %6{bitrate} kbps
+
+# binds
+source ~/.config/cmus/bindings.conf
+
