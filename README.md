@@ -18,7 +18,9 @@ uppercase letters mean **Shift + letter**: for example, `W` means **Shift+w**.
 | `Ctrl+N` | Next track |
 | `Ctrl+P` | Previous track |
 | `X` | Stop playback |
-| `q` | Quit cmus |
+| `q` | Detach from the tmux session named `cmus`, keeping playback running |
+
+Use `:quit` to exit cmus completely.
 
 ### Volume
 
@@ -39,8 +41,13 @@ uppercase letters mean **Shift + letter**: for example, `W` means **Shift+w**.
 | `w` | Switch between the artist/album pane and song pane in library view; switch panes in playlist view |
 | `J` or `Tab` | Next view, cycling through views 1–7 |
 | `K` or `Shift+Tab` | Previous view, cycling through views 1–7 |
+| `S` | Cycle sorted-library presets: title → artist/album → year → album → title |
 
 `Shift+Tab` is named `back_tab` in the binding file. View cycling wraps at either end.
+
+`S` runs [cycle-sort.sh](cycle-sort.sh), which changes the sorted library view
+(`2`) and displays the selected sort mode. It reads the current order from cmus
+and uses `flock` to serialize rapid presses. Keep the script executable.
 
 ### Search
 
