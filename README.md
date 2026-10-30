@@ -94,6 +94,7 @@ binary at `~/.cargo/bin/cmus-notify`. Its startup options are:
 
 | Option              | Purpose                                                            |
 | ------------------- | ------------------------------------------------------------------ |
+| `--config`          | Load [cmus-notify/config.toml](./cmus-notify/config.toml)           |
 | `--link`            | Exit the notification daemon when cmus exits                       |
 | `--cover`           | Include album artwork when available                               |
 | `--timeout 3`       | Set the track-notification timeout to three seconds                |
@@ -102,6 +103,7 @@ binary at `~/.cargo/bin/cmus-notify`. Its startup options are:
 The helper keeps stopped-state queries and unavailable mixer volumes compatible
 with cmus-notify 0.1.0. Keep it executable.
 
-Notification text and other preferences are configured separately in
-`~/.config/cmus-notify/config.toml`. Use real newline escapes (`\n`) for line
+Notification text and other preferences are kept in
+[cmus-notify/config.toml](./cmus-notify/config.toml), installed at
+`~/.config/cmus/cmus-notify/config.toml` and loaded explicitly with `--config`. Use real newline escapes (`\n`) for line
 breaks and supported markup such as `<b>Album:</b>` for bold labels.

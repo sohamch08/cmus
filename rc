@@ -37,8 +37,8 @@ set show_current_bitrate=false
 
 # cmus loads saved/default bindings first; apply our overrides last.
 source ~/.config/cmus/modules/bindings.conf
-source ~/.config/cmus/modules/appearance-powerline.conf
+source ~/.config/cmus/modules/powerline.conf
 
 # Notifications run as one daemon; clear the obsolete status hook.
 set status_display_program=
-shell pgrep -u "$(id -u)" -x cmus-notify >/dev/null || exec "$HOME/.cargo/bin/cmus-notify" --link --cover --timeout 3 --cmus-remote-bin "$HOME/.config/cmus/notify-remote.sh"
+shell pgrep -u "$(id -u)" -x cmus-notify >/dev/null || exec "$HOME/.cargo/bin/cmus-notify" --config "$HOME/.config/cmus/cmus-notify/config.toml" --link --cover --timeout 3 --cmus-remote-bin "$HOME/.config/cmus/scripts/notify-remote.sh"
