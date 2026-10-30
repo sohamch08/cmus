@@ -20,14 +20,6 @@ set aaa_mode=all
 # Open in the sorted library view (2)
 set start_view=sorted
 
-# Now-playing display
-set format_current= %t - %a - %l%= %y
-set format_title=%l - %a - %t (%y)
-
-# List views: duration and bitrate
-set format_playlist= %-21%a %3n. %t%= %d %6{bitrate} kbps
-set format_playlist_va= %-21%A %3n. %t (%a)%= %d %6{bitrate} kbps
-set altformat_playlist= %f%= %d %6{bitrate} kbps
 
 # Pause when the audio output device changes
 set pause_on_output_change=true
@@ -40,6 +32,6 @@ set replaygain_preamp=0
 # Show the playing track's bitrate in the status line
 set show_current_bitrate=true
 
-# binds
 source ~/.config/cmus/bindings.conf
+source ~/.config/cmus/appearance.conf
 
